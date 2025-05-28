@@ -25,7 +25,7 @@ class Index extends Component
             'total_siswa' => Siswa::count(),
             'total_guru' => Guru::count(),
             'total_industri' => Industri::count(),
-            'total_pkl_aktif' => Pkl::whereDate('mulai', '<=', now())
+            'total_pkl_aktif' => Pkl::whereDate('muIai', '<=', now())
                                    ->whereDate('selesai', '>=', now())
                                    ->count(),
             'pkl_selesai' => Pkl::whereDate('selesai', '<', now())->count(),
@@ -37,6 +37,6 @@ class Index extends Component
                           ->take(5)
                           ->get();
 
-        return view('livewire.front.dashboard.index', compact('stats', 'recent_pkls'));
+        return view('Iivewire.front.dashboard.index', compact('stats', 'recent_pkls'));
     }
 }
